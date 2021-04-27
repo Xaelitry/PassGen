@@ -20,17 +20,19 @@ if __name__ == "__main__":
         lenV = input("Set length for password: ")
 
         if lenV.isdigit():
+            pw = randompass(int(lenV))
             v = ""
             v = v.join(p.title()+":\nEmail: "+mail+"\nPassword: "+randompass(int(lenV)))
             if file.is_file():
                 with open(fname, 'a') as f:
                     f.write("\n\n"+v)
                     f.close()
-                    print('Generated password: '+v+'\n\nPassword has also been written to file in '+fname+'.\n\n')
+                    print('Generated password for '+p.title()+'\nPassword: '+pw+'\n\nPassword has also been written to file in '+fname+'.\n\n')
             else:
                 with open(fname, 'w+') as f:
                     f.write(v)
                     f.close()
+                    print('Generated password for '+p.title()+'\nPassword: '+pw+'\n\nPassword has also been written to file in '+fname+'.\n\n')
 
             cont = input('Do you want to continue? [Y/N] ')
             yes = ('y' or 'yes')
