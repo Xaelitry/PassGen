@@ -22,7 +22,7 @@ if __name__ == "__main__":
         if lenV.isdigit():
             pw = randompass(int(lenV))
             v = ""
-            v = v.join(p.title()+":\nEmail: "+mail+"\nPassword: "+randompass(int(lenV)))
+            v = v.join(p.title()+":\nEmail: "+mail+"\nPassword: "+pw)
             if file.is_file():
                 with open(fname, 'a') as f:
                     f.write("\n\n"+v)
